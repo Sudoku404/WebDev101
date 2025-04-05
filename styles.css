@@ -1,0 +1,110 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(65, 65, 65);
+    padding: 1rem 2%;
+    flex-wrap: wrap;
+}
+
+header.scrolled {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo img {
+    height: 50px;
+    max-height: 50px;
+    min-height: 30px;
+    border-radius: 20%;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    background-color: rgb(109, 109, 109);
+    color: whitesmoke;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: rgb(140, 140, 140);
+    text-decoration: none;
+}
+
+.image-container {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.image-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: whitesmoke;
+    font-family:'Courier New', Courier, monospace;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.cover-image {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: cover;
+    display: block;
+}
+
+.clubs{
+    background-color: rgb(39, 39, 39);
+    color: whitesmoke;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    padding: 0 1rem;
+    min-height: 10000000px;
+}
