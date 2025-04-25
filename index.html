@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles.css" />
-        <script type="text/javascript" src="script.js"></script>
+        <script type="text/javascript" src="script.js" defer></script>
         <link rel="logo" href="Images/logo.png">
     </head>
     <header>
@@ -16,31 +16,87 @@
         </a>
         <nav>
             <ul>
-                <li><a href="#clubs">Car Clubs</a></li>
-                <li><a href="index.html">Meetups</a></li>
-                <li><a href="index.html">Services</a></li>
-                <li><a href="index.html">Contact</a></li>
+                <li><a href="#clubs" class="navButtons">Car Clubs</a></li>
+                <li><a href="index.html" class="navButtons">Meetups</a></li>
+                <li><a href="index.html" class="navButtons">Services</a></li>
+                <li><a href="index.html" class="navButtons">Contact</a></li>
             </ul>
         </nav>
         <nav>
             <ul>
-                <li><a href="index.html">Login</a></li>
-                <li><a href="index.html">Sign Up</a></li>
+                <button id="themeToggle" type="submit">🌙</button>
+                <button>Login</a></button>
+                <button>Sign Up</a></button>
             </ul>
+            
         </nav>
     </header>
 
     <body>
         <section id="home">
             <div class="image-container">
-                <img src="Images/title-image.png" alt="Cover Image" class="cover-image">
+                <img src="Images/title-image.darkMode.png"
+                data-light-src="Images/title-image.lightMode.png"
+                data-dark-src="Images/title-image.darkMode.png"
+                alt="Cover Image" 
+                class="cover-image">
                 <h1 class="image-title">Neighborhood Car Clubs</h1>
             </div>
         </section>
         <section id="clubs">
-            <div class = "clubs">
-                <h1 class="title"> Car Clubs to Join</h1>
+            <div class="clubs">
+                <h1 class="title">Car Clubs to Join</h1>
+                <div class="signUp">
+                    <h1 class="title">Join a Community</h1>
+                    <h4>Enter the info below to join</h4>
+                    <form id="signUp">
+                        <input type="text" id="fName" placeholder="First Name" required>
+                        <input type="text" id="lName" placeholder="Last Name" required>
+                        <input type="email" id="contact" placeholder="Email" required>
+                        <label for="birthYear" >Birth Year</label>
+                        <input type="number" id="birthYear" min="1920" max="2100" maxlength="4" placeholder="Year" required>
+                        <label for="gender">Gender</label>
+                        <label for="female">Female</label>
+                        <input type="radio" id="female" name="gender" value="Female" required>
+                        <label for="male">Male</label>
+                        <input type="radio" id="male" name="gender" value="male" required>
+                        <label for="other">Other</label>
+                        <input type="radio" id="other" name="gender" value="other" required>
+                        <input type="submit" id="submit" name="submit" value="Join"></button>
+                    </form>
+                    <p>By clicking the Sign Up button, you agree to our <a href="#">Rules</a></p>
+                </div>
+                <div class="membersList">
+                    <h2> Newest Members</h2>
+                    <ul>
+                        <li id="newMember1"></li>
+                        <li id="newMember2"></li>
+                        <li id="newMember3"></li>
+                    </ul>
+                </div>
             </div>
         </section>
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
