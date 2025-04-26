@@ -49,19 +49,19 @@
                 <div class="signUp">
                     <h1 class="title">Join a Community</h1>
                     <h4>Enter the info below to join</h4>
-                    <form id="signUp">
-                        <input type="text" id="fName" placeholder="First Name" required>
-                        <input type="text" id="lName" placeholder="Last Name" required>
-                        <input type="email" id="contact" placeholder="Email" required>
-                        <label for="birthYear" >Birth Year</label>
-                        <input type="number" id="birthYear" min="1920" max="2100" maxlength="4" placeholder="Year" required>
-                        <label for="gender">Gender</label>
+                    <form id="memberSignUp">
+                        <input type="text" id="fNameInput" placeholder="First Name" required>
+                        <input type="text" id="lNameInput" placeholder="Last Name" required>
+                        <input type="email" id="emailInput" placeholder="Email" required>
+                        <label for="bYearInput" >Birth Year</label>
+                        <input type="number" id="bYearInput" min="1920" max="2100" maxlength="4" placeholder="Year" required>
+                        <label for="genderInput">Gender</label>
                         <label for="female">Female</label>
-                        <input type="radio" id="female" name="gender" value="Female" required>
+                        <input type="radio" id="female" name="genderInput" value="Female">
                         <label for="male">Male</label>
-                        <input type="radio" id="male" name="gender" value="male" required>
+                        <input type="radio" id="male" name="genderInput" value="male">
                         <label for="other">Other</label>
-                        <input type="radio" id="other" name="gender" value="other" required>
+                        <input type="radio" id="other" name="genderInput" value="other">
                         <input type="submit" id="submit" name="submit" value="Join"></button>
                     </form>
                     <p>By clicking the Sign Up button, you agree to our <a href="#">Rules</a></p>
