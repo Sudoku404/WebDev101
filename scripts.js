@@ -32,38 +32,70 @@ const changeTheme = () => {
     }
 };
 
-// Register the event listener to button
+// Event Listener for ***THEME CHANGING***
 themeToggle.addEventListener('click', changeTheme);
 
-const form = document.getElementById('signUp');
+//<=============Theme Changing Ends Here=======================================================================> */
 
-//Members list updating
 
-let members = ["Matt", "Andew", "Kaitlyn"];
-let newMember1 = document.getElementById("newMember1");
-let newMember2 = document.getElementById("newMember2");
-let newMember3 = document.getElementById("newMember3");
 
-const updateMemberList = () => {
-    newMember1.textContent = members[0] || 'null';
-    newMember2.textContent = members[1] || 'null';
-    newMember3.textContent = members[2] || 'null';
-}
-updateMemberList();
-form.addEventListener('submit', (event) => {
+
+
+
+
+
+//<=============Member Sign Up starts Here====================================================================> */
+
+//initializing the default and empty array for member and newest members
+let newestMembers = ["Matt", "Andrew", "Kaitlyn"];
+let memberList = [];
+
+//DOM elements
+const newMember1 = document.getElementById('newMember1');
+const newMember2 = document.getElementById('newMember2');
+const newMember3 = document.getElementById('newMember3');
+
+//initializing the newMemberList Display
+updateNewestMembersDisplay();
+
+const form = document.getElementById('memberSignUp'); //getting inputs form memberSignUp form
+
+
+form.addEventListener('submit', function(event) { //on Submit of memberSignUp form assign the inputs to each varaible of the member object.
     event.preventDefault();
+    // Creating new member object with current form values
+        // Get values at submission time (better than storing elements)
+        const member = {
+            fName: document.getElementById('fNameInput').value,
+            lName: document.getElementById('lNameInput').value,
+            email: document.getElementById('emailInput').value,
+            bYear: document.getElementById('bYearInput').value,
+            gender: document.querySelector('input[name="genderInput"]:checked').value
+        };
 
-    const fName = document.getElementById('fName')
+    memberList.unshift(member);
+    
+    //update the newest member list (top 3)
+    newestMembers = [ `${member.fName} ${member.lName}`, ...newestMembers.slice(0,2)]; //keeping on the first two from previous
+    
+    // Update the display
+    updateNewestMembersDisplay();
 
-    members.unshift(fName.value);
-
-    updateMemberList();
-
+    //reset and show welcome alert
     form.reset();
+    addPopUpGreeting(member); 
 
-    members= members.slice(0,3);
+    console.log("All members:", memberList);
+    console.log("Newest members:", newestMembers);
+    
 });
 
-
-
-
+function updateNewestMembersDisplay(){
+    // Update the DOM elements
+    newMember1.textContent = newestMembers[0] || '';
+    newMember2.textContent = newestMembers[1] || '';
+    newMember3.textContent = newestMembers[2] || '';
+}
+const addPopUpGreeting = (member) => {
+    alert(`Welcome, ${member.fName} ${member.lName}! You've been added to our member list.`);
+}
