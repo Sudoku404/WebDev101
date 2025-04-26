@@ -50,35 +50,56 @@
                     <h1 class="title">Join a Community</h1>
                     <h4>Enter the info below to join</h4>
                     <form id="memberSignUp">
-                        <input type="text" id="fNameInput" placeholder="First Name" required>
-                        <input type="text" id="lNameInput" placeholder="Last Name" required>
-                        <input type="email" id="emailInput" placeholder="Email" required>
-                        <label for="bYearInput" >Birth Year</label>
-                        <input type="number" id="bYearInput" min="1920" max="2100" maxlength="4" placeholder="Year" required>
-                        <label for="genderInput">Gender</label>
-                        <label for="female">Female</label>
-                        <input type="radio" id="female" name="genderInput" value="Female">
-                        <label for="male">Male</label>
-                        <input type="radio" id="male" name="genderInput" value="male">
-                        <label for="other">Other</label>
-                        <input type="radio" id="other" name="genderInput" value="other">
-                        <input type="submit" id="submit" name="submit" value="Join"></button>
+                        <input type="text" id="fNameInput" placeholder="First Name" >
+                        <input type="text" id="lNameInput" placeholder="Last Name" >
+                        <input type="email" id="emailInput" placeholder="Email" >
+                        <label for="bYearInput">Birth Year</label>
+                        <input type="number" id="bYearInput" min="1920" max="2100" maxlength="4" placeholder="Year" >
+                        
+                        <label>Gender</label>
+                        <div class="gender-options">
+                            <div class="gender-option">
+                                <input type="radio" id="female" name="genderInput" value="Female" required >
+                                <label for="female">Female</label>
+                            </div>
+                            <div class="gender-option">
+                                <input type="radio" id="male" name="genderInput" value="male" required>
+                                <label for="male">Male</label>
+                            </div>
+                            <div class="gender-option">
+                                <input type="radio" id="other" name="genderInput" value="other" required> 
+                                <label for="other">Other</label>
+                            </div>
+                        </div>
+                        
+                        <input type="submit" id="submit" name="submit" value="Join">
                     </form>
-                    <p>By clicking the Sign Up button, you agree to our <a href="#">Rules</a></p>
+                    <p class="terms">By clicking the Sign Up button, you agree to our <a href="#">Rules</a></p>
                 </div>
-                <div class="membersList">
-                    <h2> Newest Members</h2>
-                    <ul>
-                        <li id="newMember1"></li>
-                        <li id="newMember2"></li>
-                        <li id="newMember3"></li>
-                    </ul>
+                
+                <div class="top-members-box">
+                    <div class="membersList">
+                        <h2>Newest Members</h2>
+                        <ul>
+                            <li id="newMember1"></li>
+                            <li id="newMember2"></li>
+                            <li id="newMember3"></li>
+                        </ul>
+                    </div>
                 </div>
+        <div class="modal-overlay">
+            <div class="modal-content">
+                <img src="Images/modal-image.darkMode.png"
+                        data-light-src="Images/modal-image.lightMode.png"
+                        data-dark-src="Images/modal-image.darkMode.png"
+                        alt="Thank You Image" 
+                        class="modal-image">
+            <h2 class="modal-title"></h2>
+            <p class="modal-message"></p>
             </div>
-        </section>
+        </div>
     </body>
 </html>
-
 
 
 
